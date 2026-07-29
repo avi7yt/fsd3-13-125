@@ -1,5 +1,5 @@
 
-import { readFile, writeFile } from "fs/promises";
+import { readFile, writeFile, appendFile } from "fs/promises";
 
 const writeData = async(fname, contents) => {
     await writeFile(fname, contents);
@@ -12,5 +12,11 @@ const readData = async(fname) => {
     console.log(data);
 }
 
+const appendData = async(fname, contents) => {
+    await appendFile(fname, '\n' + contents);
+}
+
 await writeData("happy.txt", 'I am very happy');
+await readData('happy.txt');
+await appendData('happy.txt', 'FSD is interesting');
 await readData('happy.txt');
