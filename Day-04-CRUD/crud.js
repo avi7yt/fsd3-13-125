@@ -13,6 +13,25 @@ const getCart = async() => {
     return JSON.parse(data)
 }
 
+const addtoCart = async (item) => {
+    const products = await getCart();
+    products.push(item)
+    await saveCart(products);
+}
+
+const showCart = async() => {
+    const products = await getCart();
+    console.log(products);
+}
+
+const updateCart = async () => {
+    console.log("Update Cart");
+}
+
+const deleteFromCart = async() => {
+    console.log("Delete Cart");
+}
+
 const main = async() => {
 
     const cin = readline.createInterface({ input: stdin, output: stdout });
@@ -29,16 +48,16 @@ const main = async() => {
         console.log("Entered choice: ", choice);
         switch (Number(choice)) {
             case 1:
-                console.log("add to cart");
+                await addtoCart({ id: 101, name: "Mobile", price: '$2222', qty: 3 })
                 break;
             case 2:
-                console.log("show cart items");
+                await showCart();
                 break;
             case 3:
-                console.log("remove items");
+                await deleteFromCart();
                 break;
             case 4:
-                console.log("update quantity ");
+                await updateCart();
                 break;
             case 5:
                 console.log("See you later...😃");
