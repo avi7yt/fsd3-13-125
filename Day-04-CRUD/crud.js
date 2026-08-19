@@ -13,6 +13,7 @@ const getCart = async() => {
     return JSON.parse(data)
 }
 
+
 const addtoCart = async (item) => {
     const products = await getCart();
     products.push(item)
@@ -48,7 +49,18 @@ const main = async() => {
         console.log("Entered choice: ", choice);
         switch (Number(choice)) {
             case 1:
-                await addtoCart({ id: 101, name: "Mobile", price: '$2222', qty: 3 })
+                let data = await cin.question('Enter id, name, price and qty: ');
+                let p = data.split(',')  // it returns an array does not modify the same variable;
+                let q = p.map((item) => item.trim());
+                let [id, name, price, qty] = q;
+                const product = {
+                    id: Number(id),
+                    name,
+                    price: Number(price),
+                    qty: Number(qty)
+                }
+                console.log(product);  
+                await addtoCart(product);
                 break;
             case 2:
                 await showCart();

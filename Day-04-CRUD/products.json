@@ -1,8 +1,14 @@
 [
   {
-    "id": 101,
-    "name": "Mobile",
-    "price": "$2222",
-    "qty": 3
+    "id": 345,
+    "name": "HP-Laptopl",
+    "price": 300000,
+    "qty": 34
+  },
+  {
+    "id": 120,
+    "name": "samsung",
+    "price": 100000,
+    "qty": 4
   }
 ]
