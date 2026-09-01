@@ -11,6 +11,7 @@ const saveCart = async(cart) => {
 const getCart = async() => {
     const data = await readFile(FILE, 'utf-8')
     return JSON.parse(data)
+    // lauda
 }
 
 const addtoCart = async (item) => {
