@@ -9,7 +9,7 @@ to create npm project we can use
 - npm init -y
 - it creates a package.json file automatically
   packages.json holds all the information relate to tinstall packages from npm
-
+- update package.json type = "module"
 - it also creates a folder node_modules automatically
 - node_modulea holds the package/library files
 - generally we ignore the nodemodules by .gitignore
