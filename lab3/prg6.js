@@ -4,10 +4,25 @@ const server = http.createServer((req, res) => {
     if (req.url === "/" && req.method === "GET") {
       res.statusCode = 200;
       res.end("GET Request");
-    } else if (req.url === "/" && req.method === "POST") {
-      res.statusCode = 200;
-      res.end("POST Request");
-    } else if (req.url === "/" && req.method === "PUT") {
+    }
+    
+    
+    else if (req.url === "/" && req.method === "POST") {
+      // console.log("Request: ", req);
+      let body = '';
+      req.on('data', (chunk) => {
+        body += chunk;
+      })
+      req.on("end", () => {
+        const product = JSON.parse(body);
+        console.log("Recieved Product: ", product);
+        res.statusCode = 201;
+        res.end(JSON.stringify({msg: 'product added', product}));
+      });
+    }
+    
+    
+    else if (req.url === "/" && req.method === "PUT") {
       res.statusCode = 200;
       res.end("PUT Request");
     } else if (req.url === "/" && req.method === "DELETE") {
@@ -19,4 +34,6 @@ const server = http.createServer((req, res) => {
     }
 })
 
-server.listen(5001, () => console.log("prg6 is running"));
+server.listen(5001, () =>
+  console.log("prg6 is running on http://localhost:5001/")
+);
