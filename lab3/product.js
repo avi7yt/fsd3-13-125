@@ -5,12 +5,26 @@ const products = [
     { id: 4, name: 'A4 Cheap and Best', qty: 100, price: 100 },    
 ]
 
-let nextId = 3;
+
+let nextId = 5;
 
 export const getAllProducts = () => { 
     return products;
 }
 
-export const addProduct = () => { 
-    
+export const addProduct = (item) => { 
+    item.id = nextId;
+    nextId++;
+    products.push(item);
+    return item;
+}
+
+export const deleteProduct = (id) => { 
+    const item = products.findIndex((prd) => prd.id === id);
+    if (item === -1) {
+        return false;
+    }
+    products.splice(item, 1);
+    console.log('products remaining: ', products);
+    return true;
 }
