@@ -19,7 +19,7 @@ export const addProduct = (item) => {
     return item;
 }
 
-export const deleteProduct = (id) => { 
+export const deleteProduct = (id) => {
     const item = products.findIndex((prd) => prd.id === id);
     if (item === -1) {
         return false;
@@ -27,4 +27,25 @@ export const deleteProduct = (id) => {
     products.splice(item, 1);
     console.log('products remaining: ', products);
     return true;
+};
+
+export const updateProduct = (id, updatedItem) => {
+    const index = products.findIndex((prd) => prd.id === id);
+    // now check the conditon whether id is present or not.
+    if (index === -1) {
+        return false;
+    }
+    // products[index] = { ...products[index], ...updatedItem };
+    updatedItem.id = id;
+    products[index] = updatedItem;
+    return updatedItem;
 }
+
+export const getProductByID = (id) => {
+    const index = products.findIndex((prd) => prd.id === pid);
+
+    if (index == -1) {
+        return false;
+    }
+    return products[index];
+};

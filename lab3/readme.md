@@ -95,3 +95,17 @@ the headers can be set by res object at server side by two ways-
 
 1. res.setHeader
 2. res.write
+
+# GET-
+  - if no parameter pass to the server and we receive all items.
+
+# POST-
+  - To add record we pass the value from body section in JSON format of API tester[echo API].
+  
+# DELETE- 
+  - To delete any product we pass parameter that is id of the product from URL[url/id (id is parameter)]
+
+# PUT/PATCH -
+  - To update the product, here we pass the id from URL and data to update from body.
+
+  
