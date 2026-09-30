@@ -20,6 +20,16 @@ app.get("/api/products", (req, res) => {
 
 })
 
+app.get('/api/products/:id', (req, res) => { 
+    const { id } = req.params;
+    const product = products.find((item) => item.id === Number(id));
+    if (product) {
+        res.status(200).json({ status: 'found', data: product });
+    } else { 
+        res.status(404).json({status: false, msg: `product not found with id: ${id}`})
+    }
+})
+
 app.use((req, res) => {
   res.status(404).send("route not found");
 });
