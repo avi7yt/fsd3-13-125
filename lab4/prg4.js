@@ -12,6 +12,11 @@ app.get('/about', (req, res) => {
             Browse products
         </a>
         `)
+})
+
+app.get("/api/products", (req, res) => { 
+    const modiProducts = products.map(({ reviews, description, ...rest }) => rest);
+    res.status(200).json({ count: modiProducts.length, data: modiProducts });
 
 })
 
