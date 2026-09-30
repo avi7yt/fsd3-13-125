@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration | BrightPath Tuition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Poppins,Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.6}
+    nav{background:#14213d;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:16px 7%;position:sticky;top:0;z-index:10}
+    .logo{font-size:22px;font-weight:700;color:#fff;text-decoration:none}
+    .logo span{color:#5eead4}
+    nav ul{list-style:none;display:flex;gap:22px;flex-wrap:wrap}
+    nav a{color:#fff;text-decoration:none;font-size:14px;font-weight:500}
+    nav a:hover,.active{color:#5eead4}
+    .container{width:min(1100px,90%);margin:auto}
+    .hero{background:linear-gradient(135deg,#14213d,#1f4b78);color:#fff;padding:60px 0}
+    .hero h1{font-size:40px;margin-bottom:10px}
+    .hero p{max-width:700px;color:#dce7f5}
+    .section{padding:45px 0}
+    .section h2{text-align:center;margin-bottom:25px;font-size:28px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:#fff;padding:25px;border-radius:14px;box-shadow:0 6px 22px rgba(20,33,61,.08);border:1px solid #e7ebf2}
+    .card h3{margin:10px 0;color:#14213d}
+    .icon{font-size:30px;color:#1f7a8c}
+    .price{font-size:30px;font-weight:700;color:#14213d;margin:10px 0}
+    .price small{font-size:13px;color:#667085;font-weight:400}
+    form{max-width:700px;margin:auto;background:#fff;padding:28px;border-radius:14px;box-shadow:0 6px 22px rgba(20,33,61,.08)}
+    label{display:block;font-weight:600;margin:14px 0 6px}
+    input,select,textarea{width:100%;padding:12px 14px;border:1px solid #d0d5dd;border-radius:8px;font:inherit;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:#1f7a8c}
+    textarea{min-height:130px;resize:vertical}
+    .btn{display:inline-block;background:#1f7a8c;color:#fff;border:0;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600;cursor:pointer;margin-top:18px}
+    .btn:hover{background:#166474}
+    .center{text-align:center}
+    .notice{background:#e8f7f4;border-left:4px solid #1f7a8c;padding:14px 18px;border-radius:8px;margin-bottom:22px}
+    footer{background:#0d1728;color:#d7deea;padding:35px 7% 20px;margin-top:20px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+    footer h3{color:#fff;margin-bottom:10px}
+    footer a{color:#d7deea;text-decoration:none;display:block;margin:5px 0}
+    .social{display:flex;gap:14px;margin-top:12px}
+    .social a{font-size:20px}
+    .copy{border-top:1px solid #27344a;margin-top:25px;padding-top:15px;text-align:center;font-size:13px}
+    .table-wrap{overflow-x:auto;background:#fff;border-radius:14px;box-shadow:0 6px 22px rgba(20,33,61,.08)}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:15px;text-align:left;border-bottom:1px solid #edf0f4}
+    th{background:#14213d;color:#fff}
+    @media(max-width:800px){.grid,.footer-grid{grid-template-columns:1fr}nav{align-items:flex-start;gap:10px;flex-direction:column}nav ul{gap:12px}.hero h1{font-size:31px}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="registration.html">Bright<span>Path</span> Tuition</a>
+  <ul>
+    <li><a class="active" href="registration.html">Registration</a></li>
+    <li><a class="" href="courses.html">Courses</a></li>
+    <li><a class="" href="login.html">Login</a></li>
+    <li><a class="" href="feedback.html">Feedback</a></li>
+    <li><a class="" href="pricing.html">Pricing</a></li>
+  </ul>
+</nav>
+
+<section class="hero"><div class="container"><h1>Student Registration</h1><p>Register for your preferred tuition course and start your learning journey.</p></div></section>
+<section class="section">
+<div class="container">
+<form>
+  <div class="notice"><strong>Registration Process:</strong> Fill the form → Select course → Submit details → Our team will contact you.</div>
+  <label>Student Name</label><input type="text" placeholder="Enter student name" required>
+  <label>Parent / Guardian Name</label><input type="text" placeholder="Enter parent or guardian name" required>
+  <label>Email</label><input type="email" placeholder="student@example.com" required>
+  <label>Mobile Number</label><input type="tel" placeholder="+91 XXXXX XXXXX" required>
+  <label>Class</label>
+  <select required><option value="">Select class</option><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option></select>
+  <label>Course</label>
+  <select required><option value="">Select course</option><option>Mathematics</option><option>Science</option><option>Physics</option><option>Chemistry</option><option>Mathematics + Science</option></select>
+  <label>Preferred Mode</label>
+  <select><option>Offline Classroom</option><option>Online Classes</option><option>Hybrid</option></select>
+  <button class="btn" type="submit">Submit Registration</button>
+</form>
+</div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>BrightPath Tuition</h3>
+      <p>Quality tuition classes with structured learning, regular practice and student support.</p>
+      <div class="social">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <a href="registration.html">Registration</a>
+      <a href="courses.html">Courses</a>
+      <a href="login.html">Login</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="pricing.html">Pricing</a>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>Mon–Sat: 8:00 AM – 7:00 PM</p>
+      <p>Phone: +91 98765 43210</p>
+      <p>Email: info@brightpath.example</p>
+    </div>
+  </div>
+  <div class="copy">©️ 2026 BrightPath Tuition. All rights reserved.</div>
+</footer>
+</body>
+</html>
